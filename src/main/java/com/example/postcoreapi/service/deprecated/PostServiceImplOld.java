@@ -1,4 +1,4 @@
-package com.example.postcoreapi.service;
+package com.example.postcoreapi.service.deprecated;
 
 import com.example.postcoreapi.model.PostModel;
 import org.springframework.stereotype.Service;
@@ -9,16 +9,15 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class PostServiceImpl implements PostService{
+public class PostServiceImplOld implements PostServiceOld {
     private static final HashMap<String, PostModel> postMap = new HashMap<>();
 
     static {
-        PostModel postModel1 = new PostModel(UUID.randomUUID().toString(), UUID.randomUUID().toString(),
-                UUID.randomUUID().toString(), "Car", "in country of destination");
-        PostModel postModel2 = new PostModel(UUID.randomUUID().toString(), UUID.randomUUID().toString(),
-                UUID.randomUUID().toString(), "BATMAN", "arrived");
-        PostModel postModel3 = new PostModel(UUID.randomUUID().toString(), UUID.randomUUID().toString(),
-                UUID.randomUUID().toString(), "Spider-Man", "waits for sending");
+        PostModel postModel1 = new PostModel(UUID.randomUUID().toString(), "id1",
+                "id2", "Car", "in country of destination");
+        PostModel postModel2 = new PostModel(UUID.randomUUID().toString(), "id2","id3", "BATMAN", "arrived");
+        PostModel postModel3 = new PostModel(UUID.randomUUID().toString(), "id3",
+                "id1", "Spider-Man", "waits for sending");
         postMap.put(postModel1.getPostId(), postModel1);
         postMap.put(postModel2.getPostId(), postModel2);
         postMap.put(postModel3.getPostId(), postModel3);
